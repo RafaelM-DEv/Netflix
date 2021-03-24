@@ -1,0 +1,121 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  z-index: 1;
+}
+
+.header__logo {
+  margin-left: 25px;
+  margin-top: 20px;
+  height: 28px;
+  width: 93px;
+}
+
+.title {
+  color: white;
+  font-size: 3.5vw;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile__users {
+  color: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  text-align: center;
+}
+
+.profile__users img {
+  border-radius: 0.5rem;
+  height: 140px;
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.profile__users :hover {
+  color: white;
+}
+
+.profile__user {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.profile__btn-add {
+  color: grey;
+  font-size: 20px;
+  margin-left: 30px;
+  position: relative;
+  text-align: center;
+  top: 20px;
+}
+
+.profile__btn-add::before {
+  background-color: grey;
+  -webkit-mask-image: url(../assets/add.svg);
+          mask-image: url(../assets/add.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100px;
+          mask-size: 100px;
+  -webkit-mask-position: center;
+          mask-position: center;
+  border-radius: 0.5rem;
+  content: "";
+  display: block;
+  height: 140px;
+  left: 0px;
+  position: relative;
+  top: -20px;
+  width: 140px;
+}
+
+.profile__btn-add:hover {
+  -webkit-mask-size: 50px;
+          mask-size: 50px;
+  color: white;
+}
+
+.profile__btn-add:hover::before {
+  background-color: white;
+}
+
+.manager {
+  margin-top: 50px;
+}
+
+.manager__button {
+  background-color: black;
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
+  color: grey;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  outline: none;
+  padding: .5rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.manager__button:hover {
+  color: white;
+  border-color: white;
+}
+/*# sourceMappingURL=profiles.css.map */
