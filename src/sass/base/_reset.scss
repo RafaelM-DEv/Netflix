@@ -1,0 +1,20 @@
+// @font-face {
+//     font-family: myFont;
+//     src: url(../fonts/Free-Sans/FreeSans.otf);
+//   }
+// TODO configurar load-files otf
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: myfont; 
+  }
+  
+  body {
+    align-items: center;
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+  }
