@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtracktPlugin = require('mini-css-extract-plugin')
+const loader = require('sass-loader')
 
 module.exports = {
     entry: './src/js/index.js',
@@ -13,9 +14,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.(sa|sc|c)ss$/i,
                 use: [
                     MiniCssExtracktPlugin.loader,
+                    // 'style-loader',
                     'css-loader',
                     'sass-loader'
                 ]
@@ -45,7 +47,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource'
             },
-        ]
+        ]      
     },
 
     devServer: {
@@ -53,19 +55,18 @@ module.exports = {
         historyApiFallback: true,
         compress: true,
     },
-
+    // TODO se existir muitas páginas criar um loop e concat os plugins
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
+            template: './src/index.html',
         }),
 
-        new MiniCssExtracktPlugin({
-            filename: 'style.css'
+        new HtmlWebpackPlugin({
+            filename: 'dashboard.html',
+            template: './src/dashboard.html'
         }),
-        new MiniCssExtracktPlugin({
-            filename: 'profiles.css'
-        }),
+
         new MiniCssExtracktPlugin({
             filename: 'main.css'
         })
