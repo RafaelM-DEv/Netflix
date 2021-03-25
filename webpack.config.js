@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/js/index.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist/spa'),
+        path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: 'assets/[name][ext][query]'
     },
 
@@ -72,3 +72,4 @@ module.exports = {
         })
     ]
 }
+ 
