@@ -1,3 +1,21 @@
+.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .title {
   color: white;
   font-size: 3.5vw;
@@ -81,14 +99,26 @@
   background-color: white;
 }
 
+header {
+  display: block;
+  position: relative;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  top: 20px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100vw;
   z-index: 1;
+  background-color: rebeccapurple;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
 }
 
 .header__logo {
@@ -112,10 +142,10 @@
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 13px;
+  font-size: 18px;
 }
 
-.header__nav-bar span {
+.header__nav-bar a ~ a {
   padding-left: 10px;
 }
 
@@ -126,10 +156,7 @@
 }
 
 body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #141414;
+  background-color: grey;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,9 +165,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .manager {
