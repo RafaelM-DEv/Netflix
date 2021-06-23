@@ -9,27 +9,31 @@
 <header class="header">
   <img class="header__logo" src="./assets/netflix.png" alt="netflix">
   <nav class="header__nav-bar">
-      <div>
-          <a href="index.html">Início</a>
-          <a href="#">Séries</a>
-          <a href="#">Filmes</a>
-          <a href="#">Bombando</a>
-          <a href="#">Minha lista</a>
-      </div>
-      <div>
-        <!-- TODO add avatar -->
-          <span>Perfil</span>
-      </div>
+    <div>
+        <a href="index.html">Início</a>
+        <a href="#">Séries</a>
+        <a href="#">Filmes</a>
+        <a href="#">Bombando</a>
+        <a href="#">Minha lista</a>
+    </div>
+    <div class="header__perfil">
+      <img src="./assets/search.svg" class="header__search" alt="Search">
+      <span>INFANTIL</span>
+      <img src="./assets/notifications.svg" class="header__notifications" alt="Notificação">
+      <img src="./assets/avatar_02.png" class="header__avatar" alt="imagem do avatar"/>
+      <img src="./assets/arrow_drop.svg" alt="Menu">
+    </div>
   </nav>
 </header>
 <body>
   <!-- TODO fazer uma lista -->
   <!-- TODO loopar como fiz em Perfil -->
-  <ul class="page-dashboard">
-    <li><pre-view image="./assets/sova.png" /></li>
-    <li><pre-view image="./assets/sova.png" /></li>
-    <li><pre-view image="./assets/sova.png" /></li>
-  </ul>
+  <!-- <ul class="page-dashboard">
+    <li><pre-view title="Sova" image="./assets/sova.png" /></li>
+    <li><pre-view title="Avatar" image="./assets/avatar.png" /></li>
+    <li><pre-view title="StarWars" image="./assets/starwars.png" /></li>
+  </ul> -->
+  <list-view></list-view>
 </body>
 </html>
 

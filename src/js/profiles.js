@@ -7,15 +7,14 @@ const users = [
 class viewProfile extends HTMLElement {
   constructor() {
       super()
+
       let label = ''
       users.forEach(userImages)
 
       function userImages (imgSrc) {
-        let img = document.createElement('img');
-
-        img.src = imgSrc.img
         label += '<li class="profile__user"><img src="' + imgSrc.img + '"><div><a href="' + imgSrc.pageRef +'.html" >' + imgSrc.label + '</a></div></li>'
       }
+
       this.innerHTML = label
 
       // this.appendChild(userList)

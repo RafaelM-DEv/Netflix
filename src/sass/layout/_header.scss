@@ -10,7 +10,13 @@ header {
     padding-bottom: 20px;
     width: 100vw;
     z-index: 1;
-    background-color: rebeccapurple;
+    background-color: transparent;
+    align-items: center;
+
+    &__perfil{
+      display: flex;
+      align-items: center;
+    }
 
     a {
       color: white;
@@ -18,10 +24,26 @@ header {
     }
   
     &__logo {
-      height: 20px;
+      height: 23px;
       margin-left: 25px;
       margin-top: 0px;
       width: 85px;
+    }
+
+    &__search {
+      margin-right: 10px;
+      width: 30px;
+    }
+
+    &__notifications {
+      margin-left: 10px;
+      width: 30px;
+    }
+
+    &__avatar {
+      margin-left: 10px;
+      width: 40px;
+      border-radius: 5px;
     }
 
     &__nav-bar {

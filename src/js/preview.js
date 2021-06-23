@@ -25,7 +25,7 @@ template.innerHTML = `
         </button>
       </div>
       <div class="card__text">
-        <h3> T5:E18 "Gray Star Mutual"</h3>
+        <h3 id="card-title"></h3>
       </div>
       <div class="card__progress">
         <div class="card__bar">
@@ -54,11 +54,11 @@ class preview extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true))
     this.shadowRoot.appendChild(importSass)
     // COMPONENT
+    this.shadowRoot.getElementById('card-title').innerText = this.getAttribute('title')
     this.shadowRoot.querySelector('img').src = this.getAttribute('image')
     this.shadowRoot.querySelector('#img-card').src = this.getAttribute('image')
   }
 
-  // TODO ver sobre classList
   connectedCallback() {
     const styleSass = document.createElement('style')
     styleSass.innerHTML = `
@@ -67,12 +67,18 @@ class preview extends HTMLElement {
     }
 
     #img-card {
-      width: 350px;
+      width: 100%;
+      max-height: 189px;
     }
 
     #card-actions{
       display: block;
     }
+
+    // #card-preview {
+    //   transform: perspective(200px) translate3d(10px, 0, 30px) ;
+    // }
+
 
     #card {
       width: 350px;
@@ -89,9 +95,11 @@ class preview extends HTMLElement {
     event.target.removeChild(styleSass)
    })
   }
+
   disconectedCallback() {}
 }
 
 window.customElements.define('pre-view', preview)
 
 // TODO mocar dados 
+// TODO ver sobre classList

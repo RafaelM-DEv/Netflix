@@ -47,6 +47,7 @@
 
     &__image {
       width: 300px;
+      max-height: 168px;
       border-radius: 5px;
     }
 
@@ -77,7 +78,7 @@
 
   &__thumbnail {
     img {
-      width: 220px;
+      width: 100px;
       border-radius: 3px;
     }
   }
