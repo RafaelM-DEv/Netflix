@@ -42,7 +42,6 @@ template.innerHTML = `
   </div>
 </div>
 `
-
 class preview extends HTMLElement {
   constructor() {
     super()
@@ -69,6 +68,7 @@ class preview extends HTMLElement {
     #img-card {
       width: 100%;
       max-height: 189px;
+      cursor: pointer; 
     }
 
     #card-actions{
