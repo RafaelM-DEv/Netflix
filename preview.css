@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center; }
+
+.title {
+  color: white;
+  font-size: 3.5vw; }
+
+.profile {
+  display: flex;
+  align-items: center; }
+  .profile__users {
+    color: grey;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center; }
+    .profile__users a {
+      color: grey;
+      text-decoration: none; }
+    .profile__users img {
+      border-radius: 0.5rem;
+      height: 140px;
+      width: 140px;
+      margin-bottom: 20px; }
+    .profile__users :hover {
+      color: white; }
+  .profile__user {
+    margin-left: 20px;
+    margin-top: 20px; }
+  .profile__btn-add {
+    color: grey;
+    font-size: 20px;
+    margin-left: 30px;
+    position: relative;
+    text-align: center;
+    top: 20px; }
+    .profile__btn-add::before {
+      background-color: gray;
+      -webkit-mask-image: url(assets/add.svg);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100px;
+      -webkit-mask-position: center;
+      border-radius: 0.5rem;
+      content: "";
+      display: block;
+      height: 140px;
+      left: 0px;
+      position: relative;
+      top: -20px;
+      width: 140px; }
+    .profile__btn-add:hover {
+      mask-size: 50px;
+      color: white; }
+      .profile__btn-add:hover::before {
+        background-color: white; }
+
+header {
+  display: block;
+  position: relative; }
+
+.header {
+  display: flex;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100vw;
+  z-index: 1;
+  background-color: transparent;
+  align-items: center; }
+  .header__perfil {
+    display: flex;
+    align-items: center; }
+  .header a {
+    color: white;
+    text-decoration: none; }
+  .header__logo {
+    height: 23px;
+    margin-left: 25px;
+    margin-top: 0px;
+    width: 85px; }
+  .header__search {
+    margin-right: 10px;
+    width: 30px; }
+  .header__notifications {
+    margin-left: 10px;
+    width: 30px; }
+  .header__avatar {
+    margin-left: 10px;
+    width: 40px;
+    border-radius: 5px; }
+  .header__nav-bar {
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px; }
+    .header__nav-bar a ~ a {
+      padding-left: 10px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+
+.manager {
+  margin-top: 50px; }
+  .manager__button {
+    background-color: black;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    color: grey;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    outline: none;
+    padding: .5rem 1.5rem;
+    text-transform: uppercase; }
+    .manager__button:hover {
+      color: white;
+      border-color: white; }
+
+.preview {
+  padding: 0 5px 0 5px; }
+  .preview .card {
+    margin-top: 20px;
+    width: 300px;
+    height: 150px;
+    background-color: #2e2d2d;
+    border-radius: 5px; }
+    .preview .card__actions {
+      display: none; }
+    .preview .card__btn {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      margin-bottom: 20px; }
+      .preview .card__btn--card {
+        background-color: #242323;
+        border-color: #474747;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5rem;
+        width: 50px;
+        height: 50px; }
+        .preview .card__btn--card img {
+          padding-top: 4px;
+          width: 30px; }
+        .preview .card__btn--card:hover {
+          border-color: white; }
+    .preview .card__text {
+      color: white;
+      padding-left: 10px;
+      margin: 5px; }
+    .preview .card__image {
+      width: 300px;
+      max-height: 168px;
+      border-radius: 5px; }
+    .preview .card__progress {
+      display: flex;
+      align-items: center;
+      margin-left: 13px; }
+      .preview .card__progress--preview {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center; }
+    .preview .card__bar {
+      width: 200px;
+      height: 3px;
+      background-color: grey; }
+      .preview .card__bar--color {
+        width: 20%;
+        height: 3px;
+        background-color: red; }
+  .preview__thumbnail img {
+    width: 100px;
+    border-radius: 3px; }
+
+.page-dashboard {
+  display: flex;
+  padding: 0 2px 0 15px;
+  width: auto;
+  height: auto;
+  min-height: 250px; }
+
