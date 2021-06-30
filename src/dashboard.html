@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netflix</title>
 </head>
+<header class="header">
+  <img class="header__logo" src="./assets/netflix.png" alt="netflix">
+  <nav class="header__nav-bar">
+    <div>
+        <a href="index.html">Início</a>
+        <a href="#">Séries</a>
+        <a href="#">Filmes</a>
+        <a href="#">Bombando</a>
+        <a href="#">Minha lista</a>
+    </div>
+    <div class="header__perfil">
+      <img src="./assets/search.svg" class="header__search" alt="Search">
+      <span>INFANTIL</span>
+      <img src="./assets/notifications.svg" class="header__notifications" alt="Notificação">
+      <img src="./assets/avatar_02.png" class="header__avatar" alt="imagem do avatar"/>
+      <img src="./assets/arrow_drop.svg" alt="Menu">
+    </div>
+  </nav>
+</header>
 <body>
-  <header class="header">
-    <img class="header__logo" src="./assets/netflix.png" alt="netflix">
-    <nav class="header__nav-bar">
-        <div>
-            <span>Início</span>
-            <span>Séries</span>
-            <span>Filmes</span>
-            <span>Bombando</span>
-            <span>Minha lista</span>
-        </div>
-        <div>
-            <span>perfil</span>
-        </div>
-    </nav>
-  </header>
-  <h1 class="title">Lista de filmes</h1>
+  <list-view></list-view>
 </body>
 </html>
 

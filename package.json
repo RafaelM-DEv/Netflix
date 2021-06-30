@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "serve": "webpack serve --open",
-    "deploy": "push-dir --dir=dist/spa --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,14 @@
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.1.1",
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.2.0",
@@ -28,6 +35,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "path-browserify": "^1.0.1",
     "push-dir": "^0.4.1"
   }
 }

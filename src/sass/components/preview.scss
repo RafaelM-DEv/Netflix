@@ -1,0 +1,107 @@
+
+.preview {
+  padding: 0 5px 0 5px;
+
+  .card {
+    margin-top: 20px;
+    width: 300px;
+    height: 150px;
+    background-color: #2e2d2d;
+    border-radius: 5px;
+
+    &__actions {
+      display: none;
+    }
+
+    &__btn {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+    
+      &--card {
+        background-color: #242323;
+        border-color: #474747;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5rem;
+        width: 50px;
+        height: 50px;
+        img {
+          padding-top: 4px;
+          width: 30px;
+        }
+      
+        &:hover {
+          border-color: white;
+        }
+      }
+    }
+
+    &__text {
+      color: white;
+      padding-left: 10px;
+      margin: 5px;
+    }
+
+    &__image {
+      width: 300px;
+      max-height: 168px;
+      border-radius: 5px;
+    }
+
+    &__progress {
+      display: flex;
+      align-items: center;
+      margin-left: 13px;
+
+      &--preview {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    &__bar {
+      width: 200px;
+      height: 3px;
+      background-color: grey;
+
+      &--color {
+        width: 20%;
+        height: 3px;
+        background-color: red;
+      }
+    }
+  }
+
+  &__thumbnail {
+    img {
+      width: 100px;
+      border-radius: 3px;
+    }
+  }
+}
+
+// button {
+//   background-color: #242323;
+//   border-color: #474747;
+//   border-width: 2px;
+//   border-style: solid;
+//   border-radius: 5rem;
+//   width: 50px;
+//   height: 50px;
+//   img {
+//     padding-top: 4px;
+//     width: 30px;
+//   }
+
+//   &:hover {
+//     border-color: white;
+//   }
+// }
+
+
+
+
