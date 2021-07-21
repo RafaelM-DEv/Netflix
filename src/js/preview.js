@@ -6,22 +6,22 @@ template.innerHTML = `
     <div id="card-actions" class="card__actions">
       <div id="btn-card" class="card__btn">
         <button class="card__btn--card">
-          <img src="../assets/play_circle.svg" />
+          <img srcset="./assets/play_circle.svg" />
         </button>
         <button class="card__btn--card">
-          <img src="../assets/add_circle.svg" />
+          <img srcset="./assets/add_circle.svg" />
         </button>
         <button class="card__btn--card">
-          <img src="../assets/thumb.svg" />
+          <img srcset="./assets/thumb.svg" />
         </button>
         <button class="card__btn--card">
-          <img src="../assets/thumb_down.svg" />
+          <img srcset="./assets/thumb_down.svg" />
         </button>
         <button class="card__btn--card">
-          <img src="../assets/remove.svg" />
+          <img srcset="./assets/remove.svg" />
         </button>
         <button class="card__btn--card">
-          <img src="../assets/arrow_drop.svg" />
+          <img srcset="./assets/arrow_drop.svg" />
         </button>
       </div>
       <div class="card__text">
@@ -43,12 +43,12 @@ template.innerHTML = `
 </div>
 `
 class preview extends HTMLElement {
-  constructor() {
+  constructor () {
     super()
-    this.attachShadow({mode: 'open'})
+    this.attachShadow({ mode: 'open' })
 
     const importSass = document.createElement('style')
-    importSass.innerHTML = `@import 'preview.css';`
+    importSass.innerHTML = '@import \'css/main.css\';'
     // SETUP
     this.shadowRoot.appendChild(template.content.cloneNode(true))
     this.shadowRoot.appendChild(importSass)
@@ -58,7 +58,7 @@ class preview extends HTMLElement {
     this.shadowRoot.querySelector('#img-card').src = this.getAttribute('image')
   }
 
-  connectedCallback() {
+  connectedCallback () {
     const styleSass = document.createElement('style')
     styleSass.innerHTML = `
     #bar-preview {
@@ -79,27 +79,27 @@ class preview extends HTMLElement {
     //   transform: perspective(200px) translate3d(10px, 0, 30px) ;
     // }
 
-
     #card {
-      width: 350px;
+      // width: 350px;
       height: 350px;
+      transform: scale(1.4);
       background-color: #2e2d2d;
     };`
 
-   const cardAction = this.shadowRoot.querySelector('#card')
-   cardAction.addEventListener('mouseenter', function(event) {
-     event.target.appendChild(styleSass)
-   })
+    const cardAction = this.shadowRoot.querySelector('#card')
+    cardAction.addEventListener('mouseenter', function (event) {
+      event.target.appendChild(styleSass)
+    })
 
-   cardAction.addEventListener('mouseleave', function(event) {
-    event.target.removeChild(styleSass)
-   })
+    cardAction.addEventListener('mouseleave', function (event) {
+      event.target.removeChild(styleSass)
+    })
   }
 
-  disconectedCallback() {}
+  disconectedCallback () {}
 }
 
 window.customElements.define('pre-view', preview)
 
-// TODO mocar dados 
+// TODO mocar dados
 // TODO ver sobre classList

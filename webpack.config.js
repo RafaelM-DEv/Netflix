@@ -1,8 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtracktPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: 'development', // "production" | "development" | "none"
@@ -17,46 +15,31 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/i,
+        // test: /\.scss$/i,
+        test: /\.css$/,
         use: [
-          MiniCssExtracktPlugin.loader,
+          // MiniCssExtracktPlugin.loader,
+          'style-loader',
           'css-loader',
-          'sass-loader'
-          // 'style-loader',
+          'postcss-loader'
+          // 'sass-loader'
         ]
       },
-
-      // {
-      //     test: /\.css$/i,
-      //     use: [
-      //         'style-loader',
-      //         'css-loader'
-      //     ]
-      // },
-
       {
-        test: /\.html$/,
-        use: ['html-loader']
-      },
-
-      {
-        // babel transpilar nosso codigo javascript para versão mais antiga
         test: /\.js$/,
-        exclude: /node_modules/, // não pegar os aquivos da pasta node_modules
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'] // define a versão do javascript
+            presets: ['@babel/preset-env']
           }
         }
       },
-      // subistitui o file-loader do webpack mais antigo
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i
       }
     ]
-    // type: 'javascript/auto'
   },
 
   devServer: {
@@ -64,10 +47,10 @@ module.exports = {
     historyApiFallback: true,
     compress: true
   },
-  // TODO se existir muitas páginas criar um loop e concat os plugins
+
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      title: 'Meu App',
       template: './src/index.html'
     }),
 
@@ -75,19 +58,9 @@ module.exports = {
       filename: 'dashboard.html',
       template: './src/dashboard.html'
     }),
-    // extrai o css para fora do javascript
-    new MiniCssExtracktPlugin({
-      filename: 'main.css'
-    }),
 
     new MiniCssExtracktPlugin({
-      filename: 'preview.css'
-    }),
-
-    new CleanWebpackPlugin()
-
-    // new CopyPlugin([
-    //     { from: 'node_modules/@webcomponents/webcomponentsjs', to: 'webcomponentsjs' },
-    //   ]),
+      filename: 'style.css'
+    })
   ]
 }

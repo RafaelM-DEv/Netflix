@@ -1,15 +1,16 @@
+
 const movies = [
-  { title: 'T1E2 - SOVA', image: './assets/sova.png'},
-  { title: 'T1E2 - Avatar', image: './assets/avatar.png'},
-  { title: 'T1E1 - Cavaleiros', image: './assets/cavaleiros.png'},
-  { title: 'T1E2 - Cavaleiros', image: './assets/cavaleiros.png'},
-  { title: 'T1E2 - Star Wars', image: './assets/starwars.png'}
+  // { title: 'T1E2 - SOVA', image: './assets/sova.png' },
+  { title: 'T1E2 - Avatar', image: './assets/avatar.png' },
+  { title: 'T1E1 - Cavaleiros', image: './assets/cavaleiros.png' },
+  { title: 'T1E2 - Cavaleiros', image: './assets/cavaleiros.png' },
+  { title: 'T1E2 - Star Wars', image: './assets/starwars.png' }
 ]
 
 class listView extends HTMLElement {
-  constructor() {
+  constructor () {
     super()
-    this.attachShadow({mode: 'open'})
+    this.attachShadow({ mode: 'open' })
     let list = ''
     movies.forEach(component)
 
@@ -76,28 +77,27 @@ class listView extends HTMLElement {
         transform: rotate(90deg);
       }
     `
-    const listOrder =  document.createElement('ul')
+    const listOrder = document.createElement('ul')
     const buttonLeft = document.createElement('button')
     const buttonRight = document.createElement('button')
     const arrowLeft = document.createElement('img')
     const arrowright = document.createElement('img')
 
-    arrowLeft.src = "../assets/arrow_drop.svg"
+    arrowLeft.srcset = './assets/arrow_drop.svg'
     arrowLeft.setAttribute('id', 'arrowleft')
-    
-    arrowright.src = "../assets/arrow_drop.svg"
+
+    arrowright.srcset = './assets/arrow_drop.svg'
     arrowright.setAttribute('id', 'arrowright')
-    
+
     listOrder.setAttribute('class', 'lista')
     listOrder.setAttribute('id', 'container')
     buttonLeft.setAttribute('id', 'left')
     buttonRight.setAttribute('id', 'Right')
-    
+
     listOrder.innerHTML = list
-    
+
     buttonRight.appendChild(arrowLeft)
     buttonLeft.appendChild(arrowright)
-
 
     this.shadowRoot.appendChild(listOrder)
     this.shadowRoot.appendChild(style)
@@ -105,24 +105,24 @@ class listView extends HTMLElement {
     this.shadowRoot.appendChild(buttonRight)
   }
 
-  connectedCallback() {
+  connectedCallback () {
     const lista = this.shadowRoot.getElementById('container')
     const scrollBtnRight = this.shadowRoot.getElementById('Right')
-    scrollBtnRight.addEventListener('click', function(event) {
+    scrollBtnRight.addEventListener('click', function (event) {
       event.target.onclick = function () {
         lista.scrollLeft += 320
       }
     })
 
     const scrollBtnLeft = this.shadowRoot.getElementById('left')
-    scrollBtnLeft.addEventListener('click', function(event) {
+    scrollBtnLeft.addEventListener('click', function (event) {
       event.target.onclick = function () {
         lista.scrollLeft -= 400
       }
     })
   }
 
-  disconectedCallback() {
+  disconectedCallback () {
     const scrollBtnLeft = this.shadowRoot.getElementById('left')
     scrollBtnLeft.removeEventListener()
   }
